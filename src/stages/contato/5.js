@@ -8,34 +8,19 @@ function execute(user, msg) {
         return ["Solicitação cancelada com sucesso.."]
     }
 
-    if (msg === "#") {
-        banco.db[user].stage = "t-3"
-        return ["Digite seu email, por favor"]
+    if (msg.length > 5) {
+        banco.db[user].stage = "c-cadastro-2"
+        const telefone = msg
+        exports.telefone = telefone
+        return [
+            `O número que será salvo será o *${telefone}*?`   
+        ]
     }
 
-    let resumo = "INFORMAÇÕES:\n"
-    var total = 0
-    var devs = []
-    var sistemas = []
-    
-    banco.db[user].itens.forEach((value)=> {
-        console.log(value)
-        total += value.horas;  
-        devs.push(value.dev);   
-        sistemas.push(value.descricao);
+    return [
+        //
+    ]
 
-        resumo += `Sistema: ${value.descricao}, Dev: ${value.dev}, Horas: ${value.horas}\n`
-    })
-
-    var devs = devs.join(", ")
-    var sistemas = sistemas.join(", ")
-
-    resumo += "-------------------------\n"
-    resumo += `Total de horas: ${total}\n`
-    resumo += `Devs envolvidos: ${devs}\n`
-    resumo += `Sistemas desenvolvidos: ${sistemas}`
-
-    return [resumo, "Para confirmar, digite #.. ou para cancelar, digite *"]
 }
 
 exports.execute = execute;

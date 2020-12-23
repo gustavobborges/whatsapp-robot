@@ -7,7 +7,7 @@ function execute(user, msg) {
     if (msg === "1") {
         banco.db[user].stage = "c"
         return [
-            "MENU CONTATOS\n---------------------------\nPara CADASTRO, digite 1;\nPara CONSULTA, digite 2."
+            "MENU CONTATOS 👥\n---------------------------\nPara *CADASTRO*, digite 1;\nPara *CONSULTA*, digite 2;\nPara encerrar, digite *"
         ]
     }
 
@@ -23,7 +23,7 @@ function execute(user, msg) {
     
     return [
         // "Olá! Sou o assistente virtual da iBridge e estou em desenvolvimento.. ",
-        "MENU\n------------------------------------\nPara CONTATOS, digite 1;\nPara SISTEMAS, digite 2;\nPara encerrar, digite *",
+        "MENU\n------------------------------------\nPara *CONTATOS*, digite 1;\nPara *SISTEMAS*, digite 2;\nPara encerrar, digite *",
     ]
 }
 

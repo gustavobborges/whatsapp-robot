@@ -8,14 +8,10 @@ const data = require("./data.json")
 
 venom
   .create()
-  .then((client) => enviarMensagem(client))
-  .catch((erro) => {
-    console.log(erro);
-  });
-
-venom
-  .create()
-  .then((client) => start(client))
+  .then((client) => {
+    enviarMensagem(client),
+    start(client)
+  })
   .catch((erro) => {
     console.log(erro);
   });
@@ -38,7 +34,7 @@ function start(client) {
 
 async function enviarMensagem(client) {
   await client
-  .sendText('554891611609@c.us', 'Boa tarde! Sou o assistente virtual da iBridge! Seja bem vindo!')
+  .sendText('554896213107@c.us', 'Boa tarde! Sou o assistente virtual da *iBridge*! Seja bem vindo! 👍')
 }
 
 function getStage(user){

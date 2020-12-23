@@ -2,34 +2,41 @@ const banco = require("../../banco")
 const stages = require("../../stages")
 const cliente = require("../../index")
 
+// var i = 0;
+
 function execute(user, msg) {
+
     const telefone = cliente.telefone
-    // console.log(telefone)
-    
-    if (msg != "sim") {
-        const nome = msg; 
-        exports.nome = nome;       
-    }
 
     if (msg === "*") {
         banco.db[user].stage = 0;
         return ["É uma pena..Até mais!"]
     }
 
-    if (msg === "sim") {
+    // if (i < 1) {
+        if (msg !== "sim" && msg !== "Sim" && msg !== "s" && msg !== "S" && msg !== "*") {
+            const nome = msg; 
+            exports.nome = nome; 
+            // i++;
+        }
+    // }
+
+    if (msg === "sim" || msg === "Sim" || msg === "s" || msg === "S") {
         banco.db[user].stage = "c-cadastro-2";
         return [
-            `Muito bem.. O número será: ${telefone}?\nCaso sim, digite #;\nCaso não, digite *`                
+            `Muito bem.. O número que deseja salvar será *${telefone}*?`                
         ]
     }
 
-    // if(!servicos.carta[msg]) {
-    //     return ["Número inválido. Informe um dos números apresentados.", 
-    //     "Digite # para finalizar ou * para cancelar."]
-    // }
-
+    if(msg === "não" || msg === "Não" || msg === "nao" || msg === "Nao" || msg === "n" || msg === "N") {
+        banco.db[user].stage = "c-cadastro-1";
+        return [
+            "Por favor, informe o *nome* novamente!"
+        ]
+    }
+  
     return [
-        `O NOME é ${msg}?`,
+        `O NOME é *${msg}*?`,
     ]
 }
 
