@@ -13,13 +13,10 @@ function execute(user, msg) {
         return ["É uma pena..Até mais!"]
     }
 
-    // if (i < 1) {
-        if (msg !== "sim" && msg !== "Sim" && msg !== "s" && msg !== "S" && msg !== "*") {
-            const nome = msg; 
-            exports.nome = nome; 
-            // i++;
-        }
-    // }
+    if (msg !== "sim" && msg !== "Sim" && msg !== "s" && msg !== "S" && msg !== "*") {
+        const nome = msg; 
+        banco.db[user].dados.nome = nome; 
+    }
 
     if (msg === "sim" || msg === "Sim" || msg === "s" || msg === "S") {
         banco.db[user].stage = "c-cadastro-2";

@@ -27,7 +27,6 @@ var stages = {
         obj: require("./stages/teste/5")
     },
 
-
     //CONTATOS
     "c":{
         descricao:"Menu Contatos",
@@ -42,6 +41,10 @@ var stages = {
         descricao:"Salvar",
         obj: require("./stages/contato/3")
     },
+    "c-cadastro-2-novo":{
+        descricao:"SalvarNovo",
+        obj: require("./stages/contato/3-1")
+    },
     "c-consulta-1":{
         descricao:"Listagem",
         obj: require("./stages/contato/4")
@@ -53,24 +56,7 @@ var stages = {
     "c-salvar":{
         descricao:"Encerramento",
         obj: require("./stages/contato/6")
-    },
-    "c-c-salvar-novo":{
-        descricao:"Encerramento",
-        obj: require("./stages/contato/7")
-    }
-
-    
+    }   
 }
 
 exports.step = stages;
-
-// if (message.body === 'oi' && message.isGroupMsg === false) {
-//     client
-//       .sendText(message.from, 'opa! sou o WhatsApp Robot da iBridge e estou em desenvolvimento!')
-//       .then((result) => {
-//         console.log('Result: ', result); //return object success
-//       })
-//       .catch((erro) => {
-//         console.error('Error when sending: ', erro); //return object error
-//       });
-//   }

@@ -1,6 +1,7 @@
 const banco = require("../../banco")
 const stages = (require("../../stages"))
 
+
 function execute(user, msg) {
 
     if (msg === "*") {
@@ -9,11 +10,11 @@ function execute(user, msg) {
     }
 
     if (msg.length > 5) {
-        banco.db[user].stage = "c-cadastro-2"
+        banco.db[user].stage = "c-cadastro-2-novo"
         const telefone = msg
         exports.telefone = telefone
         return [
-            `O número que será salvo será o *${telefone}*?`   
+            `O número que será salvo será o *${telefone}*?`,
         ]
     }
 

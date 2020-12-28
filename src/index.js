@@ -34,7 +34,7 @@ function start(client) {
 
 async function enviarMensagem(client) {
   await client
-  .sendText('554896213107@c.us', 'Boa tarde! Sou o assistente virtual da *iBridge*! Seja bem vindo! 👍')
+  .sendText('554896213107@c.us', 'Boa tarde! Sou o assistente virtual da *iBridge* e estou em desenvolvimento! Seja bem vindo! 👍')
 }
 
 function getStage(user){
@@ -48,6 +48,7 @@ function getStage(user){
       itens: [
         
       ],
+      dados: {},
     }
   }
     return banco.db[user].stage;   

@@ -3,10 +3,13 @@ const banco = require("../../banco")
 const stages = require("../../stages")
 
 const cliente = require("../../index")
+const telefone_novo = require("./5")
 
 function execute(user, msg) {
 
-    const telefone = cliente.telefone
+    console.log('executei o 8')
+
+    const telefone = telefone_novo.telefone
 
     console.log(telefone)
 
