@@ -39,6 +39,4 @@ async function execute(user, msg) {
         'retornou']
 }
 
-console.log('blz')
-
 exports.execute = execute;
