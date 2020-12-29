@@ -56,6 +56,10 @@ var stages = {
     "c-salvar":{
         descricao:"Encerramento",
         obj: require("./stages/contato/6")
+    },
+    "c-listar":{
+        descricao:"Listar Todos",
+        obj: require("./stages/contato/7")
     }   
 }
 

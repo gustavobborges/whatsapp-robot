@@ -19,7 +19,7 @@ function execute(user, msg) {
     if(msg == "2") {
         banco.db[user].stage = "c-consulta-1"
         return [
-            "Vou listar todos os contatos... ok?"
+            "Estou reunindo as informações dos contatos... ok?"
         ]
     }
     

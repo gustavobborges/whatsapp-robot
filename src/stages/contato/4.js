@@ -1,42 +1,38 @@
 const banco = require("../../banco")
 const stages = require("../../stages");
 
-async function execute(user, msg) {
-
-    var resumo;
+function execute(user, msg) {
 
     (async() => {
         const db = require("../../../db")
         console.log("Acessou o banco..")
         console.log('Listar todos')
         const contatos = await db.listarTodosContatos();
-        console.log(contatos)
     
-        var resumo = "INFORMAÇÕES:\n"
+        var resumo = "*CONTATOS*:\n"
        
         contatos.forEach((value)=> {
-            contatos.push(value.nome);   
-            contatos.push(value.telefone);
             resumo += `Nome: ${value.nome}, Tel: ${value.telefone}\n`
         })
-        console.log('dentro funcao')
+        exports.contatos = resumo;
+
     })();
 
-    console.log('fora funcao')
+    if (msg != "#") {
+        banco.db[user].stage = "c-listar"
+        return [
+            'Digite *todos* para listar todos os contatos'
+        ]
+    }
 
     if (msg === "*") {
         banco.db[user].stage = 0
         return ["Solicitação cancelada com sucesso.."]
     }
 
-    if (msg === "#") {
-        banco.db[user].stage = "t-3"
-        return ["Bele.. voce apertou #"]
-    }
-
     return [
-        // resumo,
-        'retornou']
+        // 'Digite *todos* para listar todos os contatos'
+    ]
 }
 
 exports.execute = execute;
