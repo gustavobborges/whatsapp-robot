@@ -1,7 +1,6 @@
 const servicos = require("../servicos")
 const banco = require('../banco')
 
-
 function execute(user, msg) {
 
     if (msg === "1") {
