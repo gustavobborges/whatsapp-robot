@@ -1,5 +1,4 @@
 const banco = require("../../banco")
-const stages = require("../../stages");
 const conts = require("./4")
 
 function execute(user, msg) {
@@ -25,7 +24,7 @@ function execute(user, msg) {
     }
 
     return [
-        // resumo,
+        //
     ]
 }
 

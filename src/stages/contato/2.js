@@ -1,8 +1,5 @@
 const banco = require("../../banco")
-const stages = require("../../stages")
 const cliente = require("../../index")
-
-// var i = 0;
 
 function execute(user, msg) {
 

@@ -1,5 +1,4 @@
 const banco = require("../../banco")
-const stages = require("../../stages");
 
 function execute(user, msg) {
 
@@ -31,7 +30,7 @@ function execute(user, msg) {
     }
 
     return [
-        // 'Digite *todos* para listar todos os contatos'
+        //
     ]
 }
 

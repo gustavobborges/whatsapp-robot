@@ -1,21 +1,15 @@
 
 const banco = require("../../banco")
-const stages = require("../../stages")
-
 const cliente = require("../../index")
 
 function execute(user, msg) {
 
     const telefone = cliente.telefone
 
-    console.log(telefone)
-
     var telefone_ok = telefone
     
     banco.db[user].dados.telefone = telefone_ok;
     
-    console.log(banco.db[user])
-
     exports.telefone_ok = telefone_ok
 
     if (msg === "*") {

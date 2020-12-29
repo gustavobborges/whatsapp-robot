@@ -1,9 +1,5 @@
 
 const banco = require("../../banco")
-const stages = require("../../stages")
-// const cliente_tel = require("../../index")
-const cliente_nome = require("./2")
-const telefone_final = require("./3")
 
 function execute(user, msg) {
 

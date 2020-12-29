@@ -1,6 +1,4 @@
 const banco = require("../../banco")
-const stages = (require("../../stages"))
-
 
 function execute(user, msg) {
 
